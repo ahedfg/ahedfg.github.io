@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="question-container">
+      <h1 class="main-title ng-binding">How many times a day do you urinate?</h1>
+    </div>
+
+    <div class="slider-container">
+      <form action="asd.php" method="GET">
+        <input type="range" min="0" max="10" value="5" id="slider" name="slider">
+      </form>
+        <div id="selector">
+          <div class="SelectBtn1"></div>
+          <div id="SelectValue"></div>
+        </div>
+        <div id="Progressbar"></div>
+    </div>
+    <div class="question-container">
+      <h1 class="main-title ng-binding">How many times a day do you have the call of nature?</h1>
+    </div>
+    <div class="slider-container">
+      <form action="asd.php" method="GET">
+        <input type="range" min="0" max="10" value="5" id="slider2">
+      </form>
+        <div id="selector2">
+          <div class="SelectBtn2"></div>
+          <div id="SelectValue2"></div>
+        </div>
+        <div id="Progressbar2"></div>
+    </div>
+    <div class="nextcontainer">
+      <a href="asd.php" class="result">Result &raquo;</a>
+    </div>
+
+  <script>
+    var slider = document.getElementById("slider");
+    var selector = document.getElementById("selector");
+    var SelectValue = document.getElementById("SelectValue");
+    var Progressbar = document.getElementById("Progressbar");
+    var slider2 = document.getElementById("slider2");
+    var selector2 = document.getElementById("selector2");
+    var SelectValue2 = document.getElementById("SelectValue2");
+    var Progressbar2 = document.getElementById("Progressbar2");
+    SelectValue.innerHTML = slider.value;
+    SelectValue2.innerHTML = slider2.value;
+
+    slider.oninput = function(){
+      SelectValue.innerHTML = slider.value;
+      selector.style.left = this.value*10 + "%";
+      Progressbar.style.width = this.value*10 + "%";
+    }
+    slider2.oninput = function(){
+      SelectValue2.innerHTML = slider2.value;
+      selector2.style.left = this.value*10 + "%";
+      Progressbar2.style.width = this.value*10 + "%";
+    }
+
+  </script>
+</body>
+</html>
